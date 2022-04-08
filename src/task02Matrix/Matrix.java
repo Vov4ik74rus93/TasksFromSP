@@ -13,56 +13,48 @@ package task02Matrix;
 // [1 1]
 // [1 0]
 
+import java.util.Arrays;
+
 public class Matrix {
 
-    private Element[][] array = new Element[][];
+    private int[][] array;
+
+    public Matrix(int row, int column) {
+        this.array = new int[row][column];
+    }
 
     public Matrix(int size) {
-
+        array = new int[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (i == j) {
-
-                }
+                array[i][j] = (i == j) ? 1 : 0;
             }
         }
     }
 
-    public Matrix sum(Matrix matrix) {
-
-        return null;
+    public Matrix sum(Matrix addend) {
+        for (int i = 0; i < this.array.length; i++) {
+            for (int j = 0; j < this.array.length; j++) {
+                this.array[i][j] += addend.array[i][j];
+            }
+        }
+        return this;
     }
 
-    public Matrix product(Matrix matrix) {
-        return null;
+    public void setElement(int row, int column, int value) {
+        array[row][column] = value;
     }
 
-
-
-    public class Element {
-        private int row;
-        private int column;
-        private int value;
-
-        public Element(int row, int column) {
-            this.row = row;
-            this.column = column;
-        }
-
-        public Element(int row, int column, int value) {
-            this(row, column);
-            this.value = value;
-        }
-
-        public void setElement(int row, int column, int value) {
-            this.row = row;
-            this.column = column;
-            this.value = value;
-        }
-
-        public int getElement(int row, int column) {
-            return array[row][column].value;
-        }
+    public int getElement(int row, int column) {
+        return array[row][column];
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            stringBuilder.append(Arrays.toString(array[i])).append("\n");
+        }
+        return stringBuilder.toString().replaceAll(",", "");
+    }
 }
