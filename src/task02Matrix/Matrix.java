@@ -15,15 +15,16 @@ package task02Matrix;
 
 public class Matrix {
 
-    private int row;
-    private int column;
-    private int value;
+    private Element element;
 
     public Matrix(int size) {
-        this.row = size;
-        this.column = size;
+        Element[][] array = new Element[size][size];
         for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == j) {
 
+                }
+            }
         }
     }
 
@@ -36,20 +37,33 @@ public class Matrix {
         return null;
     }
 
-    public void setElement(int row, int column, int value) {
 
+
+    public class Element {
+        private int row;
+        private int column;
+        private int value;
+
+        public Element(int row, int column) {
+            this.row = row;
+            this.column = column;
+        }
+
+        public Element(int row, int column, int value) {
+            this(row, column);
+            this.value = value;
+        }
+
+        public void setElement(int row, int column, int value) {
+            this.row = row;
+            this.column = column;
+            this.value = value;
+        }
+
+        public int getElement(int row, int column) {
+
+            return 0;
+        }
     }
 
-    public Matrix getElement(int row, int column) {
-        return null;
-    }
-
-    @Override
-    public String toString() {
-        return "Matrix{" +
-                "row=" + row +
-                ", column=" + column +
-                ", value=" + value +
-                '}';
-    }
 }
