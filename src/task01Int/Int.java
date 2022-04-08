@@ -1,4 +1,4 @@
-package Task01Int;
+package task01Int;
 
 /*
 Задание 1. Int.
@@ -40,7 +40,7 @@ public class Int {
 
     @Override
     public String toString() {
-        return "" + this.number;
+        return String.valueOf(number);
     }
 
     public void add(Int n) {
@@ -50,9 +50,4 @@ public class Int {
     public void substract(Int n) {
         this.number -= n.number;
     }
-
-    public static void main(String[] args) {
-        System.out.println(new Int(1000));
-    }
-
 }
