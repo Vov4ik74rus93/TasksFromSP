@@ -43,14 +43,4 @@ public class Int {
         return "" + this.number;
     }
 
-    public static void main(String[] args) {
-        Int integer = new Int();
-        integer.increment();
-        integer.increment();
-        Int integer2 = new Int();
-        integer2.increment();
-        integer.add(integer2);
-        System.out.println(integer);
-    }
-
 }
