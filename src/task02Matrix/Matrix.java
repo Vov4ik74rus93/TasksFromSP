@@ -15,10 +15,10 @@ package task02Matrix;
 
 public class Matrix {
 
-    private Element element;
+    private Element[][] array = new Element[][];
 
     public Matrix(int size) {
-        Element[][] array = new Element[size][size];
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (i == j) {
@@ -61,8 +61,7 @@ public class Matrix {
         }
 
         public int getElement(int row, int column) {
-
-            return 0;
+            return array[row][column].value;
         }
     }
 
