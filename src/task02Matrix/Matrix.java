@@ -20,16 +20,20 @@ public class Matrix {
     private int value;
 
     public Matrix(int size) {
-        this.row = 1;
+        this.row = size;
         this.column = size;
+        for (int i = 0; i < size; i++) {
+
+        }
     }
 
-    public int sum(Matrix matrix) {
-        return 0;
+    public Matrix sum(Matrix matrix) {
+
+        return null;
     }
 
-    public int product(Matrix matrix) {
-        return 0;
+    public Matrix product(Matrix matrix) {
+        return null;
     }
 
     public void setElement(int row, int column, int value) {
