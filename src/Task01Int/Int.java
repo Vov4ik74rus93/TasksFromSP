@@ -38,8 +38,18 @@ public class Int {
         return cur;
     }
 
+    public Int add(Int n) {
+        this.number += n.number;
+        return this;
+    }
+
+    public Int substract(Int n) {
+        this.number -= n.number;
+        return this;
+    }
+
     public static void main(String[] args) {
-        Int integer = new Int().decrement();
+        Int integer = new Int().decrement().add(new Int().decrement());
         System.out.println();
     }
 
