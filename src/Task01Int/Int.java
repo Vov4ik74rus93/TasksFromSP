@@ -26,31 +26,34 @@ public class Int {
         this.number = Integer.valueOf(0);
     }
 
-    public Int increment() {
-        Int cur = new Int();
-        cur.number++;
-        return cur;
+    public void increment() {
+        this.number++;
     }
 
-    public Int decrement() {
-        Int cur = new Int();
-        cur.number--;
-        return cur;
+    public void decrement() {
+        this.number--;
     }
 
-    public Int add(Int n) {
+    public void add(Int n) {
         this.number += n.number;
-        return this;
     }
 
-    public Int substract(Int n) {
+    public void substract(Int n) {
         this.number -= n.number;
-        return this;
+    }
+
+    public String toString() {
+        return "" + this.number;
     }
 
     public static void main(String[] args) {
-        Int integer = new Int().decrement().add(new Int().decrement());
-        System.out.println();
+        Int integer = new Int();
+        integer.increment();
+        integer.increment();
+        Int integer2 = new Int();
+        integer2.increment();
+        integer.add(integer2);
+        System.out.println(integer);
     }
 
 }
