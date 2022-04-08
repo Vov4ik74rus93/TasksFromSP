@@ -38,6 +38,7 @@ public class Int {
         this.number -= n.number;
     }
 
+    @Override
     public String toString() {
         return "" + this.number;
     }
