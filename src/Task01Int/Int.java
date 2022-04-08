@@ -22,12 +22,25 @@ public class Int {
 
     private int number;
 
+    public Int() {
+
+    }
+
+    public Int(int number) {
+        this.number = number;
+    }
+
     public void increment() {
         this.number++;
     }
 
     public void decrement() {
         this.number--;
+    }
+
+    @Override
+    public String toString() {
+        return "" + this.number;
     }
 
     public void add(Int n) {
@@ -38,9 +51,8 @@ public class Int {
         this.number -= n.number;
     }
 
-    @Override
-    public String toString() {
-        return "" + this.number;
+    public static void main(String[] args) {
+        System.out.println(new Int(1000));
     }
 
 }
