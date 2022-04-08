@@ -20,11 +20,7 @@ package Task01Int;
 
 public class Int {
 
-    private Integer number;
-
-    public Int() {
-        this.number = Integer.valueOf(0);
-    }
+    private int number;
 
     public void increment() {
         this.number++;
