@@ -34,25 +34,37 @@ public class Matrix {
 
     public Matrix sum(Matrix addend) {
         for (int i = 0; i < this.array.length; i++) {
-            for (int j = 0; j < this.array.length; j++) {
+            for (int j = 0; j < this.array[i].length; j++) {
                 this.array[i][j] += addend.array[i][j];
             }
         }
         return this;
     }
 
+    public  Matrix product(Matrix multiplier) {
+        Matrix result = new Matrix(this.array.length, multiplier.array[0].length);
+        for (int i = 0; i < this.array.length; i++) {
+            for (int j = 0; j < this.array[i].length; j++) {
+                for (int k = 0; k < multiplier.array.length; k++) {
+                    result.array[i][j] += this.array[i][k] * multiplier.array[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
     public void setElement(int row, int column, int value) {
-        array[row][column] = value;
+        this.array[row][column] = value;
     }
 
     public int getElement(int row, int column) {
-        return array[row][column];
+        return this.array[row][column];
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < this.array.length; i++) {
             stringBuilder.append(Arrays.toString(array[i])).append("\n");
         }
         return stringBuilder.toString().replaceAll(",", "");
